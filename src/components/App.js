@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import styled from 'styled-components';
 import Image from './Image';
 import Details from './Details';
-import axios from 'axios';
 import "./App.css";
 import { API_KEY, BASE_URL } from "../constants";
+
+const StyledApp = styled.div`
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 800px) {
+    max-width: initial;
+    flex-direction: row;
+  }
+`
 
 function App() {
   const [photoData, setPhotoData] = useState({});
@@ -27,10 +43,10 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <StyledApp className="App">
       <Image photoData={photoData}/>
       <Details photoData={photoData} date={date} setDate={setDate}/>
-    </div>
+    </StyledApp>
   );
 }
 
