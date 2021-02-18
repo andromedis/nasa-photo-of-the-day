@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import styled from 'styled-components';
 import Image from './Image';
-import Details from './Details';
 import "./App.css";
 import { API_KEY, BASE_URL } from "../constants";
+import TextContent from "./TextContent";
 
 const StyledApp = styled.div`
   border: 1px solid black;
@@ -45,7 +45,7 @@ function App() {
   return (
     <StyledApp className="App">
       <Image photoData={photoData}/>
-      <Details photoData={photoData} date={date} setDate={setDate}/>
+      <TextContent photoData={photoData} date={date} setDate={setDate}/>
     </StyledApp>
   );
 }

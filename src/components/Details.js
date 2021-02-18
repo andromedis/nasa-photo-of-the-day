@@ -2,10 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 
 const StyledDetails = styled.div`
-  border: 1px solid black;
-  border-radius: 1rem;
-  padding: 1rem;
-  max-width: 800px;
+
 `
 
 function Details(props) {
@@ -19,7 +16,6 @@ function Details(props) {
       {
         photoData.copyright && <p className='copyright'>© {photoData.copyright}</p>
       }
-      <p className='date'>{photoData.date}</p>
     </StyledDetails>
   );
 }
